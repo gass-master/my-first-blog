@@ -54,7 +54,7 @@ class Address(models.Model):
     POSTAL = 'PO'
     ADRTYPE_CHOICES = ((DOMICILE, 'Domicile'), (POSTAL, 'Postal'),)    
     adrid = models.CharField(max_length=10, unique=True)
-    adrtype = models.CharField(max_length=1, choices=ADRTYPE_CHOICES)
+    adrtype = models.CharField(max_length=2, choices=ADRTYPE_CHOICES)
     line1 = models.CharField(max_length=30, blank=True, null=True)
     line2 = models.CharField(max_length=30, blank=True, null=True)
     zipcode = models.CharField(max_length=10, blank=True, null=True)

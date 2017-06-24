@@ -1,9 +1,9 @@
 from .models import Post
+from .models import Customer
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
-from .forms import PostForm
 from django.shortcuts import redirect
-
+from .forms import PostForm
 
 # Create your views here.
 
@@ -32,3 +32,11 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+# Views for the ASA
+
+def customer_list(request):
+    customers = Customer.objects.order_by('name1')
+    return render(request, 'blog/customer_list.html', {'customers': customers})
+

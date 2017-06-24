@@ -1,0 +1,14 @@
+
+
+
+
+<div>
+    <h1><a href="/">Customer List</a></h1>
+</div>
+
+{% for customer in customers %}
+    <div>
+        <h1><a href="">{{ customer.name1 }}</a></h1>
+		<p>ID: {{ customer.customerid }}</p>
+    </div>
+{% endfor %}
